@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Page</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+    <form action="/" method="post">
+      <label for="user_input">Enter text:</label>
+      <input type="text" id="user_input" name="user_input" required />
+
+      <label for="target_language">Select target language:</label>
+      <select id="target_language" name="target_language">
+        <option value="ru">Russian</option>
+        <option value="en">English</option>
+        <option value="pl">Polish</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+      </select>
+
+      <button type="submit">Translate</button>
+    </form>
+
+    <p>Translated text: {{ translated_text }}</p>
+    <audio controls>
+      <source src="{{ audio_file }}?v={{ timestamp }}" type="audio/wav" />
+    </audio>
+  </body>
+</html>

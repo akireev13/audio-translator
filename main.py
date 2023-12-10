@@ -60,7 +60,18 @@ def process_form():
         out.write(response.audio_content)
 
     timestamp = int(time.time())
-    return render_template('form.html', translated_text=translated_text, audio_file=f'{audio_file}?v={timestamp}')
+    return render_template('index.html', translated_text=translated_text, audio_file=f'{audio_file}?v={timestamp}')
+
+
+
+@app.route('/get_audio')
+def get_audio():
+    audio_file = 'static/output.wav'
+    return send_file(audio_file, as_attachment=True)
+
+
+
+
 
 
 
